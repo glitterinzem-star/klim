@@ -423,7 +423,7 @@
                     <a href="t.me/ewouv" class="footer-link">Профиль</a>
                     <a href="https://t.me/klprice" class="footer-link">Прайс</a>
                     <a href="https://t.me/repklim" class="footer-link">Отзывы</a>
-                    <a href="https://t.me/Dealer_nett" class="footer-link">Проект</a>
+                    <a href="https://t.me/PODARKI_KLIMA" class="footer-link">Проект</a>
                 </div>
                 
                 <p class="copyright">© 2025 Адаптер Klim Metobalitov. Все права защищены.</p>
