@@ -345,8 +345,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h2>Инновационный адаптер <span class="hero-content">Klim Metobalitov</span></h2>
+            <div class="fas fa-bolt logo-icon">
+                <h2>Инновационный адаптер <span class="fas fa-bolt logo-icon">Klim Metobalitov</span></h2>
                 <p>на любой вопрос мы найдем ответ :)</p>
             </div>
         </div>
