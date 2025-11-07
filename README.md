@@ -346,7 +346,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Инновационный адаптер <span class="highlight">Klim Metobalitov</span></h2>
+                <h2>Инновационный адаптер <span class="highlight">Klim Metobalitov</highlight></h2>
                 <p>на любой вопрос мы найдем ответ :)</p>
             </div>
         </div>
