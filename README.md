@@ -357,7 +357,7 @@
         <div class="container">
             <h2 class="section-title">Наши ресурсы</h2>
             <div class="buttons-grid">
-                <a href="t.me/ewouv" class="btn">
+                <a href="https://t.me/ewouv" class="btn">
                     <i class="fas fa-user-circle btn-icon"></i>
                     <div class="btn-title">Профиль</div>
                     <div class="btn-description">Свяжитесь с нами напрямую</div>
@@ -420,7 +420,7 @@
                 </div>
                 
                 <div class="footer-links">
-                    <a href="t.me/ewouv" class="footer-link">Профиль</a>
+                    <a href="https://t.me/ewouv" class="footer-link">Профиль</a>
                     <a href="https://t.me/klprice" class="footer-link">Прайс</a>
                     <a href="https://t.me/repklim" class="footer-link">Отзывы</a>
                     <a href="https://t.me/PODARKI_KLIMA" class="footer-link">Проект</a>
