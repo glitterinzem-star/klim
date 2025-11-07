@@ -336,7 +336,7 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-bolt logo-icon"></i>
-                    <h1>Адаптер Klim Metobalitov</h1>
+                    <h1>Klim Metobalitov</h1>
                 </div>
             </div>
         </div>
