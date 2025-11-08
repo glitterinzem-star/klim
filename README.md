@@ -347,7 +347,7 @@
         <div class="container">
             <div class="hero-content">
                 <h2>Инновационный адаптер <span class="fas fa-bolt logo-icon">Klim Metobalitov</span></h2>
-                <p>на любой вопрос мы найдем ответ :)</p>
+                <p>Гарант 3% от сделки</p>
             </div>
         </div>
     </section>
