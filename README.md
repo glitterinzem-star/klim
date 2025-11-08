@@ -363,12 +363,6 @@
                     <div class="btn-description">Свяжитесь с нами напрямую</div>
                 </a>
                 
-                <a href="https://t.me/klprice" class="btn">
-                    <i class="fas fa-tags btn-icon"></i>
-                    <div class="btn-title">Прайс-лист</div>
-                    <div class="btn-description">Актуальные цены на товар</div>
-                </a>
-                
                 <a href="https://t.me/repklim" class="btn">
                     <i class="fas fa-star btn-icon"></i>
                     <div class="btn-title">Отзывы</div>
@@ -421,7 +415,6 @@
                 
                 <div class="footer-links">
                     <a href="https://t.me/ewouv" class="footer-link">Профиль</a>
-                    <a href="https://t.me/klprice" class="footer-link">Прайс</a>
                     <a href="https://t.me/repklim" class="footer-link">Отзывы</a>
                     <a href="https://t.me/PODARKI_KLIMA" class="footer-link">Проект</a>
                 </div>
