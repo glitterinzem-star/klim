@@ -374,6 +374,13 @@
                     <div class="btn-title">Проект</div>
                     <div class="btn-description">Присоединяйтесь к нашему сообществу</div>
                 </a>
+                
+                <!-- Новая кнопка ОТС -->
+                <a href="https://t.me/KlimOTC" class="btn">
+                    <i class="fas fa-shopping-cart btn-icon"></i>
+                    <div class="btn-title">ОТС</div>
+                    <div class="btn-description">продажа нфт</div>
+                </a>
             </div>
         </div>
     </section>
@@ -417,6 +424,7 @@
                     <a href="https://t.me/ewouv" class="footer-link">Профиль</a>
                     <a href="https://t.me/repklim" class="footer-link">Отзывы</a>
                     <a href="https://t.me/PODARKI_KLIMA" class="footer-link">Проект</a>
+                    <a href="https://t.me/KlimOTC" class="footer-link">ОТС</a>
                 </div>
                 
                 <p class="copyright">© 2025 Адаптер Klim Metobalitov. Все права защищены.</p>
