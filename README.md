@@ -369,7 +369,7 @@
                     <div class="btn-description">Мнения наших клиентов</div>
                 </a>
                 
-                <a href="https://t.me/PODARKI_KLIMA" class="btn">
+                <a href="https://t.me/PODARKI_KLIM" class="btn">
                     <i class="fas fa-users btn-icon"></i>
                     <div class="btn-title">Проект</div>
                     <div class="btn-description">Присоединяйтесь к нашему сообществу</div>
