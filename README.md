@@ -104,14 +104,13 @@
             box-shadow: 0 0 10px rgba(200, 0, 0, 0.4);
         }
 
-        .profile-btn {
+        .full-width-btn {
             background: linear-gradient(135deg, #400, #200);
             grid-column: 1 / -1;
             font-weight: 600;
-            margin-top: 0.5rem;
         }
 
-        .profile-btn:active {
+        .full-width-btn:active {
             background: linear-gradient(135deg, #500, #300);
         }
 
@@ -281,7 +280,7 @@
                 transform: translateX(5px);
             }
             
-            .profile-btn:hover {
+            .full-width-btn:hover {
                 background: linear-gradient(135deg, #500, #300);
             }
             
@@ -324,8 +323,9 @@
             <div class="button-panel">
                 <button class="theme-btn active" data-tab="main">Главная</button>
                 <button class="theme-btn" data-tab="about">Обо мне</button>
-                <button class="theme-btn" data-tab="projects">Проекты</button>
-                <a href="https://t.me/AlOsint" target="_blank" class="theme-btn profile-btn">Профиль</a>
+                <button class="theme-btn full-width-btn" data-tab="projects">Проекты</button>
+                <a href="https://t.me/AlOsint" target="_blank" class="theme-btn full-width-btn">Профиль</a>
+                <a href="https://t.me/pcicealex" target="_blank" class="theme-btn full-width-btn">Прайс</a>
             </div>
 
             <!-- Область отображения текста -->
@@ -340,7 +340,7 @@
                 <!-- Обо мне -->
                 <div class="text-content" id="about-content">
                     <h2>Обо мне ✓</h2>
-                    <p>Я работаю в сфере <span class="highlight">кибер безопасности</span>, пишу сайты и разные программы, также продаю различные услуги</p>
+                    <p>Я работаю в сфере <span class="highlight">кибер безопасности</span>, пишу сайты и разные программы, также продаю различные услуги которые вы можете узнать в личных сообщениях</p>
                 </div>
 
                 <!-- Проекты -->
