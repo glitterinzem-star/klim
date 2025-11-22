@@ -45,8 +45,8 @@
 
         /* Основной контент */
         .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
             background: #1a1a1a;
             border-radius: 15px;
@@ -62,6 +62,12 @@
             gap: 1rem;
         }
 
+        .button-panel.horizontal {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .theme-btn {
             padding: 15px 20px;
             border: none;
@@ -75,6 +81,14 @@
             position: relative;
             overflow: hidden;
             border: 1px solid #500;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .button-panel.horizontal .theme-btn {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
         }
 
         .theme-btn:active {
@@ -89,11 +103,21 @@
             background: linear-gradient(135deg, #3a0a0a, #2a0a0a);
         }
 
+        .button-panel.horizontal .theme-btn:hover {
+            transform: translateY(-5px);
+        }
+
         .theme-btn.active {
             background: linear-gradient(135deg, #500, #300);
             transform: translateX(10px);
             border-left: 4px solid #c00;
             box-shadow: 0 0 10px rgba(200, 0, 0, 0.4);
+        }
+
+        .button-panel.horizontal .theme-btn.active {
+            transform: translateY(-5px);
+            border-left: 1px solid #500;
+            border-bottom: 4px solid #c00;
         }
 
         .profile-btn {
@@ -189,21 +213,89 @@
         }
 
         /* Адаптивность */
-        @media (max-width: 768px) {
+        @media (min-width: 769px) {
             .content-wrapper {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
             }
             
             h1 {
                 font-size: 2rem;
             }
             
+            .button-panel {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .theme-btn {
+                text-align: center;
+                flex: 1;
+                min-width: 120px;
+            }
+            
             .theme-btn:hover {
-                transform: none;
+                transform: translateY(-5px);
             }
             
             .theme-btn.active {
-                transform: none;
+                transform: translateY(-5px);
+                border-left: 1px solid #500;
+                border-bottom: 4px solid #c00;
+            }
+            
+            .text-display {
+                padding: 1.5rem;
+                min-height: 350px;
+            }
+            
+            .text-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .text-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .theme-btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+                min-width: 100px;
+            }
+            
+            .text-display {
+                padding: 1rem;
+                min-height: 300px;
+            }
+            
+            .text-content h2 {
+                font-size: 1.3rem;
+            }
+            
+            .text-content p {
+                font-size: 0.95rem;
             }
         }
 
@@ -295,6 +387,20 @@
                     });
                 }
             });
+            
+            // Адаптация кнопок для мобильных устройств
+            function adaptLayout() {
+                const buttonPanel = document.querySelector('.button-panel');
+                if (window.innerWidth <= 768) {
+                    buttonPanel.classList.add('horizontal');
+                } else {
+                    buttonPanel.classList.remove('horizontal');
+                }
+            }
+            
+            // Вызываем при загрузке и изменении размера окна
+            adaptLayout();
+            window.addEventListener('resize', adaptLayout);
         });
     </script>
 </body>
