@@ -1,435 +1,302 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klim Metobalitov</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Био Алекса</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #ff0000;
-            --accent-color: #2a2a2a;
-            --text-color: #ffffff;
-            --shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
         body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 2rem;
         }
 
-        /* Header Styles */
         header {
-            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-            padding: 20px 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            margin-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: linear-gradient(to right, var(--text-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .logo-icon {
-            color: var(--secondary-color);
-            font-size: 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="black"/><path d="M0 0L100 100M100 0L0 100" stroke="darkred" stroke-width="1"/></svg>');
             text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+        }
+
+        /* Основной контент */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 1px solid #333;
+        }
+
+        /* Панель кнопок */
+        .button-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .theme-btn {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2a0a0a, #1a0a0a);
+            color: #e0e0e0;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
             position: relative;
             overflow: hidden;
+            border: 1px solid #500;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--primary-color) 70%);
+        .theme-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 0 15px rgba(200, 0, 0, 0.5);
+            background: linear-gradient(135deg, #3a0a0a, #2a0a0a);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .theme-btn:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(200, 0, 0, 0.3);
+            background: linear-gradient(135deg, #3a0a0a, #2a0a0a);
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .theme-btn.active {
+            background: linear-gradient(135deg, #500, #300);
+            transform: translateX(10px);
+            border-left: 4px solid #c00;
+            box-shadow: 0 0 10px rgba(200, 0, 0, 0.4);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #cccccc;
-        }
-
-        .highlight {
-            color: var(--secondary-color);
+        .profile-btn {
+            background: linear-gradient(135deg, #400, #200);
+            margin-top: 1rem;
+            text-align: center;
             font-weight: bold;
         }
 
-        /* Buttons Section */
-        .buttons-section {
-            padding: 60px 0;
-            background-color: var(--accent-color);
+        .profile-btn:hover {
+            background: linear-gradient(135deg, #500, #300);
         }
 
-        .section-title {
+        .channel-btn {
+            background: linear-gradient(135deg, #600, #400);
+            margin-top: 1rem;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: bold;
+            display: inline-block;
+            width: 200px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 10px auto;
+        .channel-btn:hover {
+            background: linear-gradient(135deg, #700, #500);
         }
 
-        .buttons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 25px 20px;
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+        /* Область с текстом */
+        .text-display {
+            background: #1a0a0a;
             border-radius: 10px;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            border: 1px solid #333;
-            text-align: center;
+            padding: 2rem;
+            min-height: 400px;
+            border-left: 4px solid #c00;
             position: relative;
-            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
         }
 
-        .btn::before {
-            content: '';
+        .text-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2), transparent);
-            transition: 0.5s;
+            width: calc(100% - 4rem);
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .text-content.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
-            border-color: var(--secondary-color);
+        .text-content h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(200,0,0,0.3);
         }
 
-        .btn-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
+        .text-content p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .btn-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-weight: 600;
+        .highlight {
+            background: linear-gradient(120deg, #500 0%, #700 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
         }
 
-        .btn-description {
-            font-size: 0.9rem;
-            color: #cccccc;
+        /* Дополнительные стили */
+        .feature-list {
+            list-style: none;
+            margin: 1rem 0;
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: var(--primary-color);
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #400;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .feature-list li:before {
+            content: "►";
+            color: #c00;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
-        .feature-card {
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary-color);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-description {
-            color: #cccccc;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--accent-color);
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo h3 {
-            font-size: 1.5rem;
-            margin-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .footer-link {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--secondary-color);
-        }
-
-        .copyright {
-            margin-top: 20px;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
+        /* Адаптивность */
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.2rem;
+            .content-wrapper {
+                grid-template-columns: 1fr;
             }
             
-            .hero p {
-                font-size: 1rem;
+            h1 {
+                font-size: 2rem;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .theme-btn:hover {
+                transform: none;
             }
             
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .logo {
-                margin-bottom: 15px;
+            .theme-btn.active {
+                transform: none;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn-title {
-                font-size: 1.2rem;
-            }
-            
-            .feature-card {
-                padding: 20px;
-            }
+        a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-bolt logo-icon"></i>
-                    <h1>Klim Metobalitov</h1>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Био Алекса</h1>
+            <p class="subtitle">Информация о моей деятельности и проектах</p>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Инновационный адаптер <span class="fas fa-bolt logo-icon">Klim Metobalitov</span></h2>
-                <p>Гарант 3% от сделки</p>
+        <div class="content-wrapper">
+            <!-- Панель с кнопками -->
+            <div class="button-panel">
+                <button class="theme-btn active" data-tab="main">Главная</button>
+                <button class="theme-btn" data-tab="about">Обо мне</button>
+                <button class="theme-btn" data-tab="projects">Проекты</button>
+                <a href="https://t.me/AlOsint" target="_blank" class="theme-btn profile-btn">Профиль</a>
             </div>
-        </div>
-    </section>
 
-    <!-- Buttons Section -->
-    <section class="buttons-section">
-        <div class="container">
-            <h2 class="section-title">Наши ресурсы</h2>
-            <div class="buttons-grid">
-                <a href="https://t.me/ewouv" class="btn">
-                    <i class="fas fa-user-circle btn-icon"></i>
-                    <div class="btn-title">Профиль</div>
-                    <div class="btn-description">Свяжитесь с нами напрямую</div>
-                </a>
-                
-                <a href="https://t.me/repklim" class="btn">
-                    <i class="fas fa-star btn-icon"></i>
-                    <div class="btn-title">Отзывы</div>
-                    <div class="btn-description">Мнения наших клиентов</div>
-                </a>
-                
-                <a href="https://t.me/PODARKI_KLIM" class="btn">
-                    <i class="fas fa-users btn-icon"></i>
-                    <div class="btn-title">Проект</div>
-                    <div class="btn-description">Присоединяйтесь к нашему сообществу</div>
-                </a>
-                
-                <!-- Новая кнопка ОТС -->
-                <a href="https://t.me/OTCklim" class="btn">
-                    <i class="fas fa-shopping-cart btn-icon"></i>
-                    <div class="btn-title">ОТС</div>
-                    <div class="btn-description">продажа нфт</div>
-                </a>
-            </div>
-        </div>
-    </section>
+            <!-- Область отображения текста -->
+            <div class="text-display">
+                <!-- Главная -->
+                <div class="text-content active" id="main-content">
+                    <h2>Привет! 👋</h2>
+                    <p>Я <span class="highlight">Алекс</span>, расскажу вам здесь немного о себе, кто я и в какой сфере работаю.</p>
+                    <p>Занимаюсь различными IT-направлениями, но основная специализация - кибербезопасность и веб-разработка.</p>
+                </div>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Преимущества</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-tachometer-alt feature-icon"></i>
-                    <h3 class="feature-title">Мы быстро отвечаем и помогаем нашим клиентам</h3>
-                    <p class="feature-description">Обеспечиваем максимальную эффективность работы в любых условиях.</p>
+                <!-- Обо мне -->
+                <div class="text-content" id="about-content">
+                    <h2>Обо мне ✓</h2>
+                    <p>Я работаю в сфере <span class="highlight">кибер безопасности</span>, пишу сайты и разные программы, также продаю различные услуги которые вы можете узнать в личных сообщениях</p>
                 </div>
-                
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3 class="feature-title">Надежная защита</h3>
-                    <p class="feature-description">Не какого-либо обмана с нашей стороны .</p>
-                </div>
-                
-                <div class="feature-card">
-                    <i class="fas fa-cogs feature-icon"></i>
-                    <h3 class="feature-title">поддержка</h3>
-                    <p class="feature-description">ответим быстро на вопросы о наших услугах</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-bolt logo-icon"></i>
-                    <h3>Klim Metobalitov</h3>
+                <!-- Проекты -->
+                <div class="text-content" id="projects-content">
+                    <h2>Мои проекты</h2>
+                    <p>Наш проект <span class="highlight">Help</span> помогает людям и спасает их от доксинга и также мы устраиваем розыгрыши.</p>
+                    <a href="https://t.me/+MNumg_FmEe9jYmMy" target="_blank" class="theme-btn channel-btn">Channel</a>
                 </div>
-                
-                <div class="footer-links">
-                    <a href="https://t.me/ewouv" class="footer-link">Профиль</a>
-                    <a href="https://t.me/rclim" class="footer-link">Отзывы</a>
-                    <a href="https://t.me/PODARKI_KLIM" class="footer-link">Проект</a>
-                    <a href="https://t.me/OTCklim" class="footer-link">ОТС</a>
-                </div>
-                
-                <p class="copyright">© 2025 Адаптер Klim Metobalitov. Все права защищены.</p>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.theme-btn');
+            const textContents = document.querySelectorAll('.text-content');
+            
+            function switchContent(tabName) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                textContents.forEach(content => {
+                    content.classList.remove('active');
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(20px)';
+                });
+                
+                const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                    
+                    // Добавляем эффект подсветки при нажатии
+                    activeBtn.style.boxShadow = '0 0 20px rgba(255, 0, 0, 0.7)';
+                    setTimeout(() => {
+                        activeBtn.style.boxShadow = '';
+                    }, 300);
+                }
+                
+                const activeContent = document.getElementById(`${tabName}-content`);
+                setTimeout(() => {
+                    activeContent.classList.add('active');
+                    activeContent.style.opacity = '1';
+                    activeContent.style.transform = 'translateY(0)';
+                }, 50);
+            }
+            
+            buttons.forEach(button => {
+                if (button.getAttribute('data-tab')) {
+                    button.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+                        switchContent(tabName);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
